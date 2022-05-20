@@ -1,5 +1,9 @@
 package day056.task_B2B_CRM;
 
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class aaMain {
     public static void main(String[] args) {
 
@@ -25,6 +29,22 @@ public class aaMain {
             System.err.println(e.getMessage());
         }finally {
             System.out.println("Customer Balance : "+customer1.getBalance());
+        }
+
+        Product product1 = new Product(1,"Domates",10);
+        Product product2 = new Product(2,"Patates",15);
+
+        List<Product> liste = new ArrayList<>();
+        liste.add(product1);
+        liste.add(product2);
+
+        if(Product.save(liste,"src/products.bin")){
+            JOptionPane.showMessageDialog(null,"Kaydedildi.","KAYIT İŞLEMİ",JOptionPane.INFORMATION_MESSAGE);
+        }
+
+        List<Product> productsListe = Product.load("src/products.bin");
+        for(Product p : productsListe){
+            System.out.println(p);
         }
 
     }
