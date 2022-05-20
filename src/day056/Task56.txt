@@ -69,7 +69,7 @@ Task 19: Customer sınıfı, Accountable isimli interface'i implemente etmelidir
 Task 20: Customer sınıfı için balance:double isimli private alan tanımlanmaldır.
 
 Task 21: Accountable'dan implemente edilecek metotlar;
-deposit: balanc+=amount
+deposit: balance+=amount
 witdraw: balance-=amount
 getBalance: return balance
 
