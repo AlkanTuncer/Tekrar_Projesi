@@ -33,4 +33,13 @@ public record Product(int id, String name, double price) implements Serializable
         return products;
     }
 
+    public static void showList(List<Product> products) throws Exception{
+        if (products == null || products.size() <1){
+            throw new Exception("Product-list must not be null.");
+        }
+        for (Product product : products){
+            System.out.println(product);
+        }
+    }
+
 }

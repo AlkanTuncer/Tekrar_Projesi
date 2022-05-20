@@ -31,6 +31,7 @@ public class aaMain {
             System.out.println("Customer Balance : "+customer1.getBalance());
         }
 
+        // PRODUCT SINIFI SONRASI
         Product product1 = new Product(1,"Domates",10);
         Product product2 = new Product(2,"Patates",15);
 
@@ -43,9 +44,19 @@ public class aaMain {
         }
 
         List<Product> productsListe = Product.load("src/products.bin");
-        for(Product p : productsListe){
-            System.out.println(p);
+
+        try {
+            Product.showList(productsListe);
+        }catch (Exception ex){
+            System.err.println(ex.getMessage());
         }
+
+        // ORDER
+        Order order = new Order(1,new Customer("Jugking"));
+
+        order.addProduct(liste.get(0));
+        order.addProduct(liste.get(1));
+
 
     }
 }
